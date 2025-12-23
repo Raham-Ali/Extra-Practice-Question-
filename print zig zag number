@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int row,col;
+    cout<<"Enter your Row And Column "<<endl;
+    cin>>row>>col;
+    int array[10][10];
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            cin>>array[i][j];
+        }
+    }
+    //ab ham matric print kar ne ja rahe hain
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            cout<<array[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    // ab main is waqt condition laga raha hon k left se write ki taraf likhe
+    for(int i=0; i<row; i++){
+        if(i%2==0){
+            for(int j=0; j<col; j++){
+            cout<<array[i][j]<<" ";
+        }
+        //agr mhi to right to left ki janb
+        }else{
+            for(int j=col-1; j>=0; j--){
+            cout<<array[i][j]<<" ";
+        }
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
