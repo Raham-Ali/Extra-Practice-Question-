@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+struct car_information{
+    string model;
+    string year ;
+    int price;
+};
+int main(){
+int input_car_data;
+cout<<"How much you Want to store Data of Car "<<endl;
+cin>>input_car_data;
+vector<car_information>cars(input_car_data);
+for(int i=0; i<input_car_data; i++){
+    cout<<i+1<<" Is the Car"<<endl;
+    cout<<"Enter Car Model"<<endl;
+    cin>>cars[i].model;
+    cout<<"Enter Car Year"<<endl;
+    cin>>cars[i].year;
+    cout<<"Enter Car price"<<endl;
+    cin>>cars[i].price;
+}
+cout<<endl;
+cout<<endl;
+     cout<<"Enter the Data Of Car "<<endl;
+     for(int i=0; i<input_car_data; i++){
+        cout<<"Model"<<cars[i].model<<endl;
+        cout<<"Year"<<cars[i].year<<endl;
+        cout<<"price"<<cars[i].price<<endl;
+        
+     }
+    cout<<"===========>|THE END |<==============="<<endl;
+    return 0;
+}
