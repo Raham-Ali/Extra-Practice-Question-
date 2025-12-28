@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+struct student{
+    string name;
+    int age ;
+    char grade;
+};
+int main(){
+int inputstudent;
+cout<<"How much you Want to store Data of student "<<endl;
+cin>>inputstudent;
+vector<student>Students(inputstudent);
+for(int i=0; i<inputstudent; i++){
+    cout<<"The record of Student "<<i+1<<endl;
+    cout<<"Name"<<endl;
+    cin.ignore();
+    getline(cin,Students[i].name);
+    cout<<"Enter your age"<<endl;
+    cin>>Students[i].age;
+    cout<<"Your Grade is"<<endl;
+    cin>>Students[i].grade;
+}
+    cout<<endl;
+    cout<<endl;
+   cout<<"All Details Of Students"<<endl;
+   for(int i=0; i<inputstudent; i++){
+       cout<<"The Student Number is"<<i+1<<endl;
+       cout<<"Name"<<Students[i].name<<endl;
+       cout<<"Age"<<Students[i].age<<endl;
+       cout<<"Grade"<<Students[i].grade<<endl;
+   }
+      cout<<"Good By Jani";
+return 0;
+}
