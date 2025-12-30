@@ -1,0 +1,96 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void easy(string name){
+    srand(time(0));
+    int num=rand()%50+1;
+    int guess;
+    int tries=10;
+    while(tries>0){
+        cout<<"Enter your Guess number"<<endl;
+        cin>>guess;
+        if(guess==num){
+            cout<<"Congratulation You Win"<<endl;
+            return ;
+        }else if(guess>num)
+        cout<<"Its too high"<<endl;
+        else cout<<"its too low"<<endl;
+        tries--;
+        cout<<"Remaing tries of your is "<<tries<<endl;
+    }
+    
+    cout<<"Your Number was"<<num<<endl;
+    
+    cout<<endl;
+cout<<endl;
+cout<<endl;
+}
+int  medium (string name){
+    srand(time(0));
+    int number=rand()%100+1;
+    int guess;
+    int tries=10;
+    
+    while(tries>0){
+    cout<<"Enter your Number of guess"<<endl;
+    cin>>guess;
+    if(guess==number){
+    cout<<"Congratulation you Win"<<endl;
+    break;
+}
+else if(guess>number){
+cout<<"Its too high"<<endl;
+}
+else{
+cout<<"its too low"<<endl;
+}
+tries--;
+cout<<"your remaining number is"<<tries<<endl;
+}
+cout<<"your number was"<<number<<endl;
+return 0;
+}
+void hard(string name){
+    srand(time(0));
+    int number=rand()%1000+1;
+    int guess;
+    int tries=10;
+    
+    while(tries>0){
+        cout<<"Enter Your Number"<<endl;
+        cin>>guess;
+        if(guess==number){
+            cout<<"Congratulation you win your Number is"<<guess<<endl;
+            break;
+        }else if(guess>number){
+            cout<<"Its too high"<<endl;
+        }else{
+            cout<<"Its too low"<<endl;
+        }
+        tries--;
+        cout<<"Remaining Number is "<<tries<<endl;
+    }
+    cout<<"Your Number was"<<guess;
+}
+int main(){
+    string name;
+    cout<<"Enter your name ";
+    getline(cin,name);
+    int choice;
+    do{
+        cout<<"Gausiing game "<<endl;
+        cout<<"1.easy game "<<endl;
+        cout<<"2.medium game"<<endl;
+        cout<<"3.hard game"<<endl;
+        cout<<"4.Program end"<<endl;
+        cout<<"Select the option"<<endl;
+        cin>>choice;
+        if(choice==1)
+        easy(name);
+        if(choice==2)
+        medium(name);
+        if(choice==3)
+        hard(name);
+    }while(choice!=4);
+    return 0;
+}
