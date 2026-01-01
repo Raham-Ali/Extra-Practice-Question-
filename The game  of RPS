@@ -1,0 +1,70 @@
+#include <iostream>
+#include<vector> 
+#include<ctime>
+using namespace std;
+void rps();
+void rpscomputer();
+void rpsplayer();
+
+int main()
+{ 
+    string name;
+    cout<<"Enter your name "<<endl;
+    getline(cin,name);
+    rps();
+    
+    return 0;
+}
+void rps(){
+    int menu;
+    cout<<"RPS GAME"<<endl;
+    cout<<"1.Player VS Computer"<<endl;
+    cout<<"2.Player VS Player"<<endl;
+    cout<<"select optin "<<endl;
+    cin>>menu;
+    if(menu==1) rpscomputer();
+    else if(menu==2)rpsplayer();
+    else cout<<"ghalt option dobara karo yr"<<endl;
+}
+void rpscomputer(){
+    srand(time(0));
+    int rounds=3;
+    int playerwin=0;
+    int computerwin=0;
+    int p,c;
+    string choice[3]={"Rock","paper","Scissors"};
+    vector<string>playermove,computermove;
+    while(rounds>0){
+        cout<<"Round baqi hain aap "<<rounds<<endl;
+        cout<<"1.Rock"<<endl;
+        cout<<"2.paper"<<endl;
+        cout<<"3.scissor"<<endl;
+        cout<<"choose"<<endl;
+        cin>>p;
+        p--;
+        c=rand()%3;
+        playermove.push_back(choice[p]);
+        computermove.push_back(choice[c]);
+        cout<<"Computer"<<choice[c]<<endl;
+        cout<<"player"<<choice[p]<<endl;
+        if(p==c){
+            cout<<"Draw the match"<<endl;
+        }else if((p==0 && c==2) || (p==1 && c==1) || (p==2 && 0)){
+            cout<<"Player win the Match"<<endl;
+            playerwin++;
+        }else{
+            cout<<"Computerwin the match"<<endl;
+            computerwin++;
+        }
+        rounds--;
+    }
+    cout<<"game history"<<endl;
+    for(int i=0; i<playermove.size(); i++){
+        cout<<"Round"<<i+1<<"player choice"<<playermove[i] 
+        <<"and computer choice"<<computermove[i]<<endl;
+        }
+         cout << "Final Result";
+    if (playermove > computermove) cout << "Player wins the match." << endl;
+    else if (computermove > playermove) cout << "Computer wins the match." << endl;
+    else cout << "Match draw." << endl;
+}
