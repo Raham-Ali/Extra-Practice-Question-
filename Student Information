@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+struct student{
+    string name;
+    int ID;
+};
+int main (){
+    vector<student>s;
+    s.push_back({"Raham Ali",12});
+    s.push_back({"Rashid Ali",15});
+    s.push_back({"Ilyas",100});
+    cout<<"|========>The Information Of Students<=======|"<<endl;
+    for(const auto& student:s){
+        cout<<"Student Name is "<<student.name<<"& Student ID Number is "<< student.ID<<endl;
+    }
+    return 0;
+}
