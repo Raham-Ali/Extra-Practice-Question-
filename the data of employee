@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+struct employee{
+    string name;
+    int ID;
+    int salary;
+};
+
+int main(){
+  vector<employee>e;
+int n;
+cout<<"how many employee data you want to store"<<endl;
+cin>>n;
+employee z;
+for(int i=0; i<n; i++){
+    
+    cout<<"Employee Name "<<endl;
+    cin>>z.name;
+    cout<<"Employee ID "<<endl;
+    cin>>z.ID;
+    cout<<"Employee salar "<<endl;
+    cin>>z.salary;
+    e.push_back(z);
+}
+   cout<<"Alll information Of Employee"<<endl;
+for(const auto& employee:e){
+ 
+    cout<<"Employee Name is "<<z.name<<" And ";
+    cout<<"Employee ID is "<<z.ID<<" and";
+    cout<<"Employee salary is "<<z.salary;
+}
+    return 0;
+}
