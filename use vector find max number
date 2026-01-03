@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    vector<int>number{12,34,1,3,6,9};
+    int max=number[0];
+    cout<<"We are print the vector"<<endl;
+    for(int num:number){
+        cout<<num<<" ";
+    }
+    cout<<endl;
+    for(int num:number){
+        if(num>max){
+            max=num;
+        }
+    }
+    cout<<"Your Maximam Number is "<<max;
+    return 0;
+}
